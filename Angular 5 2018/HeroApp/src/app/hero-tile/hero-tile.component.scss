@@ -1,0 +1,144 @@
+.hero {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  color: #666;
+  cursor: pointer;
+  font-size: 1.3em;
+  text-align: center;
+}
+
+.hero.down {
+  background: rgba(255, 0, 0, 0.15);
+}
+
+.hero.up {
+  background: rgba(0, 255, 0, 0.15);
+}
+
+.hero-data {
+  margin: 0;
+  padding: 2em 1em;
+}
+
+.hero .fa-trophy {
+  font-size: 3em;
+}
+
+.hero.bronze .fa-trophy {
+  color: brown;
+}
+
+.hero.gold .fa-trophy {
+  color: gold;
+}
+
+.hero.silver .fa-trophy {
+  color: silver;
+}
+
+.thumbnail:hover {
+  transform: scale(1.1);
+}
+
+.thumbnail {
+  position: relative;
+  transition: transform .3s;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  color: #fff;
+  margin-bottom: 0;
+}
+
+.hero .buttons {
+  margin: 0;
+}
+
+.hero .buttons .btn {
+  border: 0;
+  padding: 1em 1em;
+}
+
+.hero .buttons .btn-primary {
+  border-radius: 0 0 1px 0;
+}
+
+.hero .buttons .btn-default {
+  background: #efefef;
+  border-radius: 0 0 0 1px;
+}
+
+.hero .buttons .btn-default:not([disabled]):hover {
+  background: #dadada;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  color: #666;
+  cursor: pointer;
+  font-size: 1.3em;
+  text-align: center;
+}
+
+.hero.down {
+  background: rgba(255, 0, 0, 0.15);
+}
+
+.hero.up {
+  background: rgba(0, 255, 0, 0.15);
+}
+
+.hero-data {
+  margin: 0;
+  padding: 2em 1em;
+}
+
+.hero .fa-trophy {
+  font-size: 3em;
+}
+
+.hero.bronze .fa-trophy {
+  color: brown;
+}
+
+.hero.gold .fa-trophy {
+  color: gold;
+}
+
+.hero.silver .fa-trophy {
+  color: silver;
+}
+
+.thumbnail:hover {
+  transform: scale(1.1);
+}
+
+.thumbnail {
+  position: relative;
+  transition: transform .3s;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  color: #fff;
+  margin-bottom: 0;
+}
+
+.hero .buttons {
+  margin: 0;
+}
+
+.hero .buttons .btn {
+  border: 0;
+  padding: 1em 1em;
+}
+
+.hero .buttons .btn-primary {
+  border-radius: 0 0 1px 0;
+}
+
+.hero .buttons .btn-default {
+  background: #efefef;
+  border-radius: 0 0 0 1px;
+}
+
+.hero .buttons .btn-default:not([disabled]):hover {
+  background: #dadada;
+}

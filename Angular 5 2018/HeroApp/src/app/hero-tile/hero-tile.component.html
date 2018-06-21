@@ -1,0 +1,21 @@
+<div class="hero" [ngClass]="{gold:isFirst, silver:isSecond, bronze:isLast}">
+  <div class="hero-data row">
+    <div class="col-3">
+      <span class="fa fa-trophy"></span>
+    </div>
+    <div class="col-9">
+      <span>{{hero.name}}&nbsp;&nbsp;</span>
+      <br>
+      <span class="fa fa-thumbs-o-up"></span>
+      <strong>{{hero.votes}}</strong>
+    </div>
+  </div>
+  <div class="buttons">
+    <button class="hero up" [disabled]="!canVote || hero.votes >= 10" (click)="voteHero(1)">
+      <span class="fa fa-thumbs-o-up"></span>
+    </button>
+    <button class="hero down" [disabled]="!canVote || hero.votes <= 0" (click)="voteHero(-1)">
+      <span class="fa fa-thumbs-o-down"></span>
+    </button>
+  </div>
+</div>

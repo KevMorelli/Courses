@@ -1,0 +1,29 @@
+<button type="button" class="btn btn-success" routerLink="/create">
+  <span class="fa fa-plus "></span>
+</button>
+<div class="form-group pull-right">
+  <input type="text" class="form-control" placeholder="Search" (keyup)="filterHeroes($event)">
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Birthday</th>
+      <th scope="col">Votes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let hero of filteredHeroes">
+      <td>
+        <img height="32" src="{{hero.image}}">
+      </td>
+      <td>{{hero.id}}</td>
+      <td>{{hero.name}}</td>
+      <td>{{hero.birthdate | date:'dd/MM/yyyy'}}</td>
+      <td>{{hero.votes}}</td>
+    </tr>
+  </tbody>
+</table>

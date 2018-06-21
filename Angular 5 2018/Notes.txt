@@ -1,0 +1,36 @@
+Components
+
+ng generate component home
+
+-----------------------------------------------------------
+
+Directives
+
+<li *ngFor="let hero of heroes"></li>
+<app-hero-detail *nglf="selectedHero"></app-hero-detail>
+
+<input [(ngModel)]="hero.name">
+
+-----------------------------------------------------------
+
+Bindings
+
+{{ title }} 			ts=>html
+[value] = "newValue" 	ts=>html
+(click)="runFuction()" 	html=>ts
+[(ngModel)]="title" 	ts=><=html
+
+import { FormsModule } from '@angular/forms';
+imports: {
+	FormsModule
+}
+
+-----------------------------------------------------------
+
+Services
+
+ng g service home/home
+
+-------------
+[ngClass]
+

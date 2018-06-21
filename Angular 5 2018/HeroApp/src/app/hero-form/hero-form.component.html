@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-sm-4"></div>
+
+  <div class="col-sm-4">
+
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input id="name" type="text" class="form-control" [(ngModel)]="hero.name">
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <input id="description" type="text" class="form-control" [(ngModel)]="hero.description">
+    </div>
+    <div class="form-group ">
+      <label for="birthdate ">Birthdate</label>
+      <input id="birthdate " type="date" class="form-control" [(ngModel)]="hero.birthdate">
+    </div>
+    <button type="button " class="btn btn-primary " (click)="createHero() ">Submit</button>
+
+  </div>
+
+  <div class="col-sm-4 "></div>
+</div>
