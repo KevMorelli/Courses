@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: exercise from topic 6
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: pc1
+Implementation-Vendor-Id: com.kev
+Build-Jdk: 1.8.0_144
+Implementation-URL: http://projects.spring.io/spring-boot/exercise/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+
