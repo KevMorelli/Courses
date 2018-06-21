@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Business.Dtos.CustomerDto>
+
+@if (ViewBag.error != null)
+{
+    @Html.Partial("ErrorDB")
+}
+
+<div style="padding-top : 2%" align="center">
+
+    <table class="table table-bordered">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Company</th>
+            <th>Adress</th>
+            <th>City</th>
+            <th>Country</th>
+            <th>Phone</th>
+            <th>Action</th>
+        </tr>
+
+        @foreach (var c in this.Model)
+        {
+            <tr>
+                <td>@c.CustomerID</td>
+                <td>@c.ContactName</td>
+                <td>@c.CompanyName</td>
+                <td>@c.Address</td>
+                <td>@c.City</td>
+                <td>@c.Country</td>
+                <td>@c.Phone</td>
+                <td>
+                    <a href="/home/delete?customerID=@c.CustomerID">Delete</a>
+                    /
+                    <a href="/home/update?customerID=@c.CustomerID">Update</a>
+                </td>
+            </tr>
+        }
+    </table>
+</div>

@@ -1,0 +1,26 @@
+﻿<div class="row">
+
+    <div class="col-sm-4"></div>
+
+    <div class="col-sm-4">
+
+        @if (ViewBag.msg != null)
+        {
+            if (ViewBag.error == null)
+            {
+                @Html.Partial("SuccessMsg")
+            }
+            else
+            {
+                @Html.Partial("ErrorMsg")
+            }
+        }
+
+        <form action="/users">
+            <button class="btn btn-primary" type="submit">Back</button>
+        </form>
+    </div>
+
+    <div class="col-sm-4"></div>
+
+</div>

@@ -1,0 +1,88 @@
+﻿<h1 style="text-align:center">Calculator</h1>
+<div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <form>
+            <div class="form-group">
+                <label for="x">X:</label>
+                <input class="form-control" id="x" type="number" required />
+            </div>
+
+            <div class="form-group">
+                <label for="y">Y:</label>
+                <input class="form-control" id="y" type="number" required />
+            </div>
+
+
+            <button class="btn btn-primary" type="button" id="calculateBtn">Calculate</button>
+
+            <div class="form-group" style="padding-top:25px">
+                <label for="result">Result:</label>
+                <input class="form-control" id="result" type="text" readonly />
+            </div>
+        </form>
+    </div>
+    <div class="col-sm-4">
+        <div class="form-group" style="padding-top:35px">
+            <label for="Operation">Select Operation:</label>
+            <select class="form-control" id="Operation" onclick="CheckOperation()">
+                <option>Sum</option>
+                <option>Substract</option>
+                <option>Multiplication</option>
+                <option>Division</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<script>
+    
+    var x = document.getElementById("x")
+    var y = document.getElementById("y")
+
+    function CheckOperation() {
+        var op = document.getElementById("Operation").value
+
+        switch (op) {
+            case "Sum":
+                document.getElementById("calculateBtn").onclick = Sum
+                break
+            case "Substract":
+                document.getElementById("calculateBtn").onclick = Substract
+                break
+            case "Multiplication":
+                document.getElementById("calculateBtn").onclick = Multiplication
+                break
+            default:
+                document.getElementById("calculateBtn").onclick = Division
+                break
+        }
+    }
+
+    function Sum() {
+        var result = parseInt(x.value) + parseInt(y.value)
+        document.getElementById("result").value = result
+    }
+
+    function Substract() {
+        var result = parseInt(x.value) - parseInt(y.value)
+        document.getElementById("result").value = result
+    }
+
+    function Multiplication() {
+        var result = parseInt(x.value) * parseInt(y.value)
+        document.getElementById("result").value = result
+    }
+
+    function Division() {
+        if (y.value != 0) {
+            var result = parseInt(x.value) / parseInt(y.value)
+            document.getElementById("result").value = result
+        }
+        else {
+            document.getElementById("result").value = "Como vas a dividr por cero?!"
+        }
+    }
+
+
+</script>

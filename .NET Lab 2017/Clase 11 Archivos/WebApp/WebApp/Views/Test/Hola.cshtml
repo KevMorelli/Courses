@@ -1,0 +1,11 @@
+﻿@model Employee
+
+<h2>Hola</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(c => c.Name)
+    @Html.TextBoxFor(c => c.Name)
+
+    <button type="submit">Submit</button>
+}

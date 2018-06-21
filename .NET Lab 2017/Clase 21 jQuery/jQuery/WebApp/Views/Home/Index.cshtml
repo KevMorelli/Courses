@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <h1>TODO List</h1>
+
+        <form class="form-inline" style="padding-bottom:25px;">
+            <div class="form-group">
+                <input class="form-control" type="text" id="Task" />
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary" type="button" id="AddButton">Add</button>
+            </div>
+        </form>
+
+        <ul id="List" class="list-group"></ul>
+    </div>
+    <div class="col-sm-4"></div>
+</div>
+<script src="~/Scripts/jquery-3.2.1.min.js"></script>
+
+<script>
+    $("#AddButton").click(function () {
+        var val = $("#Task").val()
+
+        var element = `<li class="list-group-item"><span>${val}</span>
+                    <button type="button" class="btn btn-xs btn-danger pull-right"
+                    onclick="Borrar(this)" >X</button>
+                    <button type="button" class="btn btn-xs btn-warning pull-right"
+                    onclick="Editar(this)" >E</button>
+                        </li>`
+        $("#List").append(element)
+
+        $("#Task").val("")
+    })
+
+    var editingOpen = false
+
+    function Editar(element) {
+        var li = $(element).parent()
+        var span = li.children().first()
+        var val = span.text()
+
+        if (editingOpen) {
+            var inputElement = $("#EditInput")
+            span.text(inputElement.val())
+            inputElement.remove()
+            span.show()
+        }
+        else {
+            span.hide()
+
+            var input = `<input class="input-xs" type="text" value="${val}" id="EditInput" />`
+
+            li.append(input)
+        }
+
+        editingOpen = !editingOpen
+    }
+
+    function Borrar(element) {
+        $(element).parent().remove()
+    }
+
+
+
+</script>

@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+<form method="post" action="LoginResult">
+    <div>
+        <label>Nombre: </label>
+        <input name="name" type="text" required/>
+    </div>
+    <button type="submit">Enviar</button>
+</form>
+
+@* 
+    @using (var form = Html.BeginForm("LoginResult"))
+    {
+    <div>
+    <label></label>
+    @Html.TextAreaFor(c => c, new { name = "nombre"})
+    </div>
+    <Button>
+    }
+*@

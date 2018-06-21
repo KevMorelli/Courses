@@ -1,0 +1,35 @@
+﻿@model List<Services.CountryModel>
+
+<div class="row">
+
+    <div class="col-sm-2"></div>
+
+    <div class="col-sm-8">
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Country</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var pais in this.Model)
+                {
+                    <tr>
+                        <td>@pais.CountryName</td>
+                        <td>
+                            <a href="/country/update?countryID=@pais.ID">Update</a>
+                            /
+                            <a href="/country/delete?countryID=@pais.ID">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+
+    <div class="col-sm-2"></div>
+
+</div>

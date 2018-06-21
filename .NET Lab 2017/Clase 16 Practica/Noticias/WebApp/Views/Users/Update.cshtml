@@ -1,0 +1,35 @@
+﻿@model Services.Dtos.UserDto
+
+<div class="row">
+
+    <div class="col-sm-4"></div>
+
+    <div class="col-sm-4">
+        <form action="/users/update" method="post">
+            <div class="form-group">
+                <label for="Username">Username:</label>
+                <input type="text" class="form-control" id="Username" name="Username" value="@Model.Username" readonly>
+            </div>
+            <div class="form-group">
+                <label for="Password">Password:</label>
+                <input type="text" class="form-control" id="Password" name="Password">
+            </div>
+            <button type="submit" class="btn btn-default">Update</button>
+        </form>
+        @if (ViewBag.msg != null)
+        {
+            if (ViewBag.error == null)
+            {
+                @Html.Partial("SuccessMsg")
+            }
+            else
+            {
+                @Html.Partial("ErrorMsg")
+            }
+        }
+
+    </div>
+
+    <div class="col-sm-4"></div>
+
+</div>

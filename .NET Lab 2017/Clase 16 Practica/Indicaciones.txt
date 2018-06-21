@@ -1,0 +1,19 @@
+Practica 7/12 Parte 1
+Crear un sistema web con Asp.Net MVC Donde se va a guardar
+Noticias
+Especificamente
+Una noticia contiene la siguiente informacion:
+- Titulo (Requerido max 200 car)
+- Descripcion (Requerido max 2000 car)
+- Usuario que la creo (Requerido)
+- Usuario que la modifico (Ultimo)
+- Fecha de creacion
+- Fecha de ultima edicion
+
+Crear un sistema que permita un CRUD de usuarios
+De un usuario se guarda el username (max 50 car) y el password (max 50 car) ambos requeridos
+El Sistema propondra un login para ingresar un usuario mediante usuario y password y recien ahi se le habilitara las opciones para el CRUD de usuarios y el CRUD de noticias.
+Mostrar como un punto de menu 'Noticias' el cual sera publico y mostrara el listado de todas las noticias
+Mostrara titulo, descripcion como textarea y el usuario que creo y modifico y en que fecha/hora.
+USAR 3 CAPAS.
+

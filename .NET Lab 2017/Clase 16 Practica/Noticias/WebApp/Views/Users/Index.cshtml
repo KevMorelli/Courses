@@ -1,0 +1,25 @@
+﻿@model List<string>
+
+<div class="row">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        <table class="table table-striped">
+            <tr>
+                <th>Users</th>
+                <th>Actions</th>
+            </tr>
+            @foreach (var username in Model)
+            {
+                <tr>
+                    <td>@username</td>
+                    <td>
+                        <a href="/users/update?id=@username">Edit</a>
+                        /
+                        <a href="/users/delete?id=@username">Remove</a>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div class="col-sm-4"></div>
+</div>

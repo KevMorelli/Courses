@@ -1,0 +1,34 @@
+﻿<h1>Ejercicio 6</h1>
+
+<form method="post">
+    <div>
+        <label for="price">Valor Producto: </label>
+        <input type="number" required min="1" name="price" />
+    </div>
+    <div>
+        <input type="radio" name="type" onclick="cashClicked();" value="Efectivo" checked="checked" id="cashB"/>
+        <label for="cash">Cash</label>
+
+        <input type="radio" name="type" onclick="cardClicked();" value="Tarjeta" id="cardB"/>
+        <label for="card">Card</label>
+    </div>
+    <div id="account" style="visibility:hidden">
+        <label for="account">Nro Cuenta: </label>
+        <input type="number" required min="1" name="account"/>
+    </div>
+    <div style="padding-top : 25px">
+        <button type="submit">Submit</button>
+    </div>
+</form>
+
+<h1>@ViewBag.msg</h1>
+
+<script>
+    function cardClicked() {
+        document.getElementById("account").style.visibility = "visible"
+    }
+
+    function cashClicked() {
+        document.getElementById("account").style.visibility = "hidden"
+    }
+</script>

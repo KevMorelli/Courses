@@ -1,0 +1,16 @@
+*Diseñar dominio
+
+*cmd... Enable-migrations
+
+*crear DbContext
+
+*Configuraciones del dominio
+	Data anotations
+	override OnModelCreating
+	Crear clases configuraciones
+	EntityTypeConfiguration
+
+*cmd... add-migration {name}
+
+*cmd... update-database / update-database -targetMigration:{name}
+

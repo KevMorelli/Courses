@@ -1,0 +1,75 @@
+_Name para vistas parciales
+@Html.Partial("",Model)
+@Html.RenderPartial("_TerritoryItem", Model)
+@*              *@ Comentario
+
+
+using System.web.Mvc;
+
+namespace NorthWebApp
+public static class HtmlHelperExtensions
+{
+
+	public static MvcHtmlString Button(this HtmlHelper html)
+	{
+		var buttonHtml = @"Input type='submit' value='Create' class='btn btn-default' />";
+		return new MvcHtmlString(buttonHtml);
+	}
+}
+
+@html.Button()
+
+query string
+conjunto de clave valor que vienen en la url
+
+cookies
+archivo de texto plano con key y value, viaja en request y response
+
+sessions
+.InProc mode, which stores session state in memory on the Web server. This is the default.
+.StateServer mode, which stores session state in a separate process called the ASP.NET state service. This ensures that session state is preserved if the Web application is restarted and also makes session state available to multiple Web servers in a Web farm.
+.SQLServer mode stores session state in a SQL Server database. This ensures that session state is preserved if the Web application is restarted and also makes session state available to multiple Web servers in a Web farm.
+.Custom mode, which enables you to specify a custom storage provider.
+.Off mode, which disables session state.
+Usa cookie para almacenar la ID de la session
+
+application
+diccionario de objetos a nivel de aplicacion
+
+httpcontext.items
+diccionario de clave valor que solo vive en un request
+
+
+asp-net pipeline
+caminos por los que se ejecuta un request y un response
+
+AuthFilter
+
+filterconfig.cs => filters.add(new AuthFilterAttribute());
+
+actionfilterattribute
+
+
+API REST
+
+stateless
+asp.net => wepapi
+
+
+return RedirectToAction("Index", "Region");
+
+@Html.editorFor(c => c.nombre)
+
+[Display(Name = "Name")]
+[MaxLength(30, ErrorMessage = "Magia negra")]
+[Required]
+public string Nombre {get; set;}
+
+if (ModelState.IsValid)
+{
+	var a = 1;
+}
+
+@Html.ValidationMessageFor(model => model.TerritoryID, "", new {@class = "text-danger"})
+
+aplicar filtro global(filterconfig.cs), metodo y controlador

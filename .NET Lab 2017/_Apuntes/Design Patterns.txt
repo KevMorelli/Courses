@@ -1,0 +1,9 @@
+Design Patterns
+
+creational		structural		behavioral		architecture
+
+solid
+
+autofac framework
+ninject <= easier
+

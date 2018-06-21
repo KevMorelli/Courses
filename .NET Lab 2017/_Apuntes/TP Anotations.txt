@@ -1,0 +1,34 @@
+● 3 capas
+	datos	servicios	presentacion(mvc)
+
+
+● CRUD de empleados
+
+
+● CRUD de paises
+
+
+● Registro de horarios
+	Esta pantalla se deberá pedir al usuario seleccionar un turno para ingresar horarios,
+	luego de seleccionar el turno se deben listar todos los empleados del turno seleccionado con
+	la opción Agregar Horario
+
+
+● Estetica
+
+
+● Base de datos
+	Tabla Empleados
+		Nombre Requerido (max 50 caracteres)
+		Apellido Requerido (max 50 caracteres)
+		País (Combo) (requerido)
+		Fecha de Ingreso (opcional)
+		Turno donde trabaja (hay 3 turnos Turno Mañ, Tard, Noch) (requerido)
+
+	Tabla paises
+		Nombre
+
+	Tabla horarios
+		Tipo (max 10 caracteres)(ej: mañana, tarde, noche)
+		Hora inicial
+		Hora final

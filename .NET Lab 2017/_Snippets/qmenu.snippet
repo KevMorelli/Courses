@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<CodeSnippets  
+    xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">  
+    <CodeSnippet Format="1.0.0">  
+        <Header>  
+            <Title>Arrow Menu</Title>
+            <Author>Kevin Morelli</Author>  
+    		<Description>A quick arrow menu for simple console apps</Description>  
+    		<Shortcut>qmenu</Shortcut>   
+        </Header>  
+        <Snippet>  
+            <Code Language="csharp">  
+                <![CDATA[
+public static int ArrowMenu(string menu, string[] menuItems)
+        {
+            Console.CursorVisible = false;
+            Console.Clear();
+
+            var curItem = 0;
+            ConsoleKeyInfo key;
+            var borderSize = menu.Length * 2;
+
+            /////////////TITLE BUILD/////////////
+            Console.Write("      ");
+            for (int i = 0; i < borderSize; i++)
+            {
+                Console.Write("=");
+            }
+
+            Console.SetCursorPosition(menu.Length/2 + 5, 1);
+            Console.WriteLine(menu);
+
+            Console.Write("      ");
+            for (int i = 0; i < borderSize; i++)
+            {
+                Console.Write("=");
+            }
+            Console.WriteLine();
+            //////////////////////////////////////
+
+            Console.WriteLine("\n Move with up and down arrows, press enter to select:\n");
+
+            foreach (var item in menuItems)
+            {
+                Console.WriteLine($"   {item}");
+            }
+
+            do
+            {
+                Console.SetCursorPosition(0, 6 + curItem);
+                Console.Write("=>");
+
+                key = Console.ReadKey(true);
+
+                if (key.Key.ToString() == "DownArrow" && curItem < menuItems.Length - 1)
+                {
+                    Console.SetCursorPosition(0, 6 + curItem);
+                    Console.Write("  ");
+                    curItem++;
+                }
+                else if (key.Key.ToString() == "UpArrow" && curItem > 0)
+                {
+                    Console.SetCursorPosition(0, 6 + curItem);
+                    Console.Write("  ");
+                    curItem--;
+                }
+
+            } while (key.KeyChar != 13); //13 = Enter
+
+            Console.CursorVisible = true;
+            Console.Clear();
+
+            return curItem;
+        }
+                ]]>  
+            </Code>  
+        </Snippet>  
+    </CodeSnippet>  
+</CodeSnippets>  

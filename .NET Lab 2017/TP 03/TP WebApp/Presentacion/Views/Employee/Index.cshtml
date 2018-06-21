@@ -1,0 +1,30 @@
+﻿@model List<Services.EmployeeModel>
+<div class="row">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Country</th>
+                <th>Entry Date</th>
+                <th>Shift</th>
+                <th>Value by Hour</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var employee in Model)
+            {
+                <tr>
+                    <td>@employee.ID</td>
+                    <td>@employee.FirstName</td>
+                    <td>@employee.LastName</td>
+                    <td>@employee.Country.CountryName</td>
+                    <td>@employee.EntryDate.Day/@employee.EntryDate.Month/@employee.EntryDate.Year</td>
+                    <td>@employee.CurrentShift.Name</td>
+                    <td>$@employee.ValueByHour</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

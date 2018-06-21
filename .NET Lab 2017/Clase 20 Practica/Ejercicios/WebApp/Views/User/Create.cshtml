@@ -1,0 +1,76 @@
+﻿@{
+    ViewBag.Title = "Create user";
+}
+
+<div class="row">
+    <div class="col-sm-4"></div>
+
+    <div class="col-sm-4">
+        <form method="post">
+            <div class="form-group">
+                <label for="Name">Name:</label>
+                <input class="form-control" type="text" name="Name" id="Name" />
+                <span id="NameError" class="label label-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="Surname">Surname:</label>
+                <input class="form-control" type="text" name="Surname" id="Surname" />
+                <span id="SurnameError" class="label label-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="Age">Age:</label>
+                <input class="form-control" type="number" name="Age" id="Age" />
+                <span id="AgeError" class="label label-danger"></span>
+            </div>
+            <button id="btnSubmit" class="btn btn-primary" type="submit">Create</button>
+        </form>
+    </div>
+
+    <div class="col-sm-4"></div>
+</div>
+
+
+<script>
+
+    document.getElementById("btnSubmit").onclick = function () { return checkForm() };
+
+    function checkForm() {
+        var error = false
+        var name = document.getElementById("Name").value
+        var surname = document.getElementById("Surname").value
+        var age = document.getElementById("Age").value
+
+        document.getElementById("NameError").innerHTML = ""
+        document.getElementById("SurnameError").innerHTML = ""
+        document.getElementById("AgeError").innerHTML = ""
+
+        if (name == surname) {
+            document.getElementById("NameError").innerHTML = "Error, name and surname are the same!"
+            document.getElementById("SurnameError").innerHTML = "Error, name and surname are the same!"
+            error = true
+        }
+        if (name == "") {
+            document.getElementById("NameError").innerHTML = "Error, name is required!"
+            error = true
+        }
+        if (surname == "") {
+            document.getElementById("SurnameError").innerHTML = "Error, surname is required!"
+            error = true
+        }
+        if (name.length > 50) {
+            document.getElementById("NameError").innerHTML = "Error, max length is 50"
+            error = true
+        }
+        if (surname.length > 50) {
+            document.getElementById("SurnameError").innerHTML = "Error, max length is 50"
+            error = true
+        }
+        if (age < 13) {
+            document.getElementById("AgeError").innerHTML = "Error, min age is 13"
+            error = true
+        }
+
+        if (error)
+            return false
+    }
+</script>

@@ -1,0 +1,17 @@
+UNIT TEST
+
+Test Driven Development
+
+https://www.youtube.com/watch?v=qkblc5WRn-U
+
+unitario e integracion
+
+Arrange
+Act
+Assert
+
+Test->windows-> test explorer
+
+IOC (inversion de control)
+Inyeccion de dependencia
+

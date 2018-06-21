@@ -1,0 +1,60 @@
+﻿@model List<Services.Models.ShiftControlModel>
+
+<div class="row">
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Register ID</th>
+                <th>Employee</th>
+                <th>Entry</th>
+                <th>Exit</th>
+                <th>Worked hours</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var employee in this.Model)
+            {
+                <tr>
+
+                    <td>@employee.Employee.ID</td>
+                    <td>@employee.Employee.FirstName @employee.Employee.LastName</td>
+                    <td>
+                        @if (@employee.Entry.Year < DateTime.Today.Year)
+                        {
+                            <a href="/Shift/ShiftControl?ID=@employee.ID&Day=@DateTime.Today&Employee.ID=@employee.Employee.ID&Entry=@employee.Entry&Exit=@employee.Exit&WorkedHours=@employee.WorkedHours&Section=1">Add Shift</a>
+                        }
+                        else
+                        {
+                            @employee.Entry.ToString("t")
+                        }
+                    </td>
+                    <td>
+                        @if (@employee.Exit.Year < DateTime.Today.Year)
+                        {
+                            if (@employee.Entry.Year >= DateTime.Today.Year)
+                            {
+                                <a href="/Shift/ShiftControl?ID=@employee.ID&Day=@DateTime.Today&Employee.ID=@employee.Employee.ID&Entry=@employee.Entry&Exit=@employee.Exit&WorkedHours=@employee.WorkedHours&Section=2">Add Shift</a>
+                            }
+
+                        }
+                        else
+                        {
+                            @employee.Exit.ToString("t")
+                        }
+                    </td>
+                    <td>
+                        @if (employee.WorkedHours <= 0) { }
+                        else
+                        {@employee.WorkedHours <span>hs</span>}
+                    </td>
+                    <!--<td><a href="/Shift/ShiftControl?ID=@employee.ID&Day=@DateTime.Today&Employee.ID=@employee.Employee.ID&Entry=@employee.Entry&Exit=@employee.Exit&WorkedHours=@employee.WorkedHours">Add Shift</a></td>-->
+
+
+
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
