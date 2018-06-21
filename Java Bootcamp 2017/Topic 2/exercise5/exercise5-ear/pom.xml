@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>exercise5</artifactId>
+		<groupId>com.topic2.exercise5</groupId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<groupId>com.topic2.exercise5</groupId>
+	<artifactId>exercise5-ear</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>ear</packaging>
+
+	<name>exercise5-ear</name>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.topic2.exercise5</groupId>
+			<artifactId>exercise5-common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<scope>provided</scope>
+			<type>jar</type>
+		</dependency>
+		<dependency>
+			<groupId>com.topic2.exercise5</groupId>
+			<artifactId>exercise5-ejb</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<scope>provided</scope>
+			<type>ejb</type>
+		</dependency>
+		<dependency>
+			<groupId>com.topic2.exercise5</groupId>
+			<artifactId>exercise5-web</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<scope>provided</scope>
+			<type>war</type>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<version>6</version>
+					<defaultLibBundleDir>lib</defaultLibBundleDir>
+					<modules>
+						<ejb3Module>
+							<groupId>com.topic2.exercise5</groupId>
+							<artifactId>exercise5-ejb</artifactId>
+						</ejb3Module>
+						<jarModule>
+							<groupId>com.topic2.exercise5</groupId>
+							<artifactId>exercise5-common</artifactId>
+						</jarModule>
+						<webModule>
+							<groupId>com.topic2.exercise5</groupId>
+							<artifactId>exercise5-web</artifactId>
+						</webModule>
+					</modules>
+				</configuration>
+			</plugin>
+		</plugins>
+		<pluginManagement>
+			<plugins>
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.apache.maven.plugins
+										</groupId>
+										<artifactId>
+											maven-ear-plugin
+										</artifactId>
+										<versionRange>[2.6,)</versionRange>
+										<goals>
+											<goal>
+												generate-application-xml
+											</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+</project>
