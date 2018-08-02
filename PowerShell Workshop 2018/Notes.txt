@@ -1,0 +1,117 @@
+------------------
+ PowerShell Day 1
+------------------
+
+$procesos <-- variable
+| <-- pipeline
+` <-- muestra el caracter literal
+@{} <-- hash table
+@() <-- array
+# <-- comentario
+<#><#> <-- comentario multi linea
+
+$procesos = Get-Process
+$procesos.GetType()
+$procesos[0].GetType()
+
+$procesos | Get-Member <-- trae metodos
+
+$var = "hola"
+$var.ToUpper()
+
+write-host "$var a todos"  -> muestra hola a todos
+
+write-host '$var a todos' -> muestra $var a todos
+
+write-host "$($var.length)"  <-- permite usar la propiedad de var dentro del string
+
+get-help get-process
+
+(get-service).count
+
+Get-Process | Format-List
+Get-Process | Format-Table -AutoSize
+Get-Process | Format-Table -Property name,id -AutoSize
+
+(Get-Command)[0..5]
+Get-Command | where name -like "*disk*"
+Get-Command | where name -like "*disk*" | where name -notlike "*azure*"
+
+Get-Process | Group-Object -Property name
+Get-Process | Group-Object -Property name | Sort-Object Count
+Get-Process | Group-Object -Property name | Sort-Object Count -Descending
+
+Get-Service | Sort-Object -Property Name
+Get-Service | Group-Object -Property status | Sort-Object -Property Name
+
+Get-Process | where ProcessName -like "chrome" | select ProcessName, CPU
+
+ForEach($p in $procesos){$p}
+$procesos | ForEach-Object {$_}
+
+-eq <- igual a
+-ne <- distinto de
+-gt <- mayor que
+-ge <- mayor o igual que
+-lt <- menor que
+-le <- menor o igual que
+
+-like
+-notlike
+-match <-- regex
+-notmatch <-- regex
+
+-and
+-or
+-xor
+-not
+!
+
+$ht = @{1=2}
+$ht.add(3,1)
+
+get-service | select name, @{N="Arranca solo?"; E={if($_.starttype -eq "Automatic"){"Si"}else{"No"}}}
+
+//Exportar a excel//
+$p = Get-Process
+$p | Export-Csv -Path $env:USERPROFILE\procesos.csv -NoTypeInformation -Force
+
+get-date
+get-date -UFormat %y%h%d-%H%M => 18Aug01-1240
+
+Get-Process | ConvertTo-Html | out-file "index.html"
+Get-Process | ConvertTo-Html | ConvertTo-Html -cssuri "table.css" | out-file "index.html"
+
+get-vm
+$_.extensiondata.guest
+
+
+
+------------------
+ PowerShell Day 2
+------------------
+
+Test-WsMan COMPUTER
+
+Enter-PSSession -ComputerName COMPUTER -Credential USER
+
+---------------------
+$hacer_esto = {
+	(get-process).CPU | foreach {$total += $_}
+	Start-Sleep -Seconds 1
+	$total
+}
+
+start-job -ScriptBlock $hacer_esto
+
+Write-Host ""
+
+Get-Job | Receive-Job
+----------------------
+
+Get-Job
+Remove-Job -1
+Get-Job | Receive-Job -Keep
+Get-Job | Remove-Job
+
+Get-ExecutionPoliciy
