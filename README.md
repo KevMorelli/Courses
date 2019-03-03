@@ -15,3 +15,4 @@
 	- Introduction to Xamarin.Android
 	- Activities and Intents
 	- Introduction to Xamarin.Forms
+	- XAML in Xamarin.Forms
