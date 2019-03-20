@@ -17,3 +17,4 @@
 	- Introduction to Xamarin.Forms
 	- XAML in Xamarin.Forms
 - MvvmCross Introduction
+- Star Wars MvvmCross
