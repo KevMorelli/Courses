@@ -52,10 +52,12 @@
                             HorizontalOptions="FillAndExpand"
                             HeightRequest="2"
                             BackgroundColor="{StaticResource MenuDividerColor}" />
-                        <component:InformationView
+                        <component:InformationFormsView
                             HorizontalOptions="FillAndExpand"
                             VerticalOptions="StartAndExpand"
-                            mvx:Bi.nd="LabelText [Crew]; ValueText Starship.Crew" />
+                            LabelText="{Binding [Crew]}"
+                            ValueText="{Binding Starship.Crew}"
+                            ValueColor="{Binding Starship.Crew, Converter={StaticResource CrewSizeToColorConverter}}" />
                         <BoxView
                             HorizontalOptions="FillAndExpand"
                             HeightRequest="2"

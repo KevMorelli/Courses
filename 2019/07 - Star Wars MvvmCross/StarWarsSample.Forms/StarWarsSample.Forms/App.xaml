@@ -10,6 +10,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <styles:Colors />
                 <styles:Widgets />
+                <styles:Converters />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
 	</Application.Resources>

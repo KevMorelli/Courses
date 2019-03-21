@@ -56,5 +56,6 @@
     <Folder Include="Styles\" />
     <Folder Include="Components\" />
     <Folder Include="Behaviors\" />
+    <Folder Include="Converters\" />
   </ItemGroup>
 </Project>
