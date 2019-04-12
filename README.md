@@ -18,3 +18,4 @@
 	- XAML in Xamarin.Forms
 - MvvmCross Introduction
 - Star Wars MvvmCross
+- Flutter Introduction
