@@ -6,11 +6,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(title: 'Hello Flutter App'),
+      title: 'Hello Flutter App',
+      home: MyHomePage(title: 'Hidden Message App'),
     );
   }
 }
@@ -26,14 +23,14 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int counter = 0;
-  var template = "Hello Flutter!";
-  var message = "";
+  var template = 'Hello Flutter!';
+  var message = '';
 
   void incrementCounter() {
     setState(() {
       if (counter < template.length) {
         counter++;
-        message = "";
+        message = '';
 
         for (int i = 0; i < counter; i++) {
           message += template[i];
@@ -48,15 +45,16 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              '$message',
-              style: Theme.of(context).textTheme.display1,
-            ),
-          ],
+      body: Material(
+        color: Colors.deepPurple,
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text('$message',
+                  style: TextStyle(color: Colors.white, fontSize: 24.0)),
+            ],
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
