@@ -22,6 +22,8 @@ class HelloYou extends StatefulWidget {
 
 class _HelloYouState extends State<HelloYou> {
   var name = '';
+  var greetings = ['Hello', 'Goodbye'];
+  var greeting = 'Hello';
 
   @override
   Widget build(BuildContext context) {
@@ -42,10 +44,27 @@ class _HelloYouState extends State<HelloYou> {
                 });
               },
             ),
-            Text('Hello ' + name + '!')
+            DropdownButton<String>(
+                items: greetings.map((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+                value: greeting,
+                onChanged: (String value) {
+                  _onDropdownChange(value);
+                }),
+            Text(greeting + ' ' + name + '!')
           ],
         ),
       ),
     );
+  }
+
+  _onDropdownChange(String value) {
+    setState(() {
+      greeting = value;
+    });
   }
 }
