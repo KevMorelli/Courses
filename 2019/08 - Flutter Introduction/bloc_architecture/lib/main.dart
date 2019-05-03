@@ -1,6 +1,6 @@
-import 'package:bloc_architecture/counter.dart';
+import 'package:bloc_architecture/counter/counter.dart';
 import 'package:flutter/material.dart';
-import 'package:bloc_architecture/counter_bloc.dart';
+import 'package:bloc_architecture/counter/counter_bloc.dart';
 
 void main() => runApp(MyApp());
 
